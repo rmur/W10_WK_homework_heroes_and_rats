@@ -3,3 +3,5 @@ var Task = function(level, urgency, reward){
   this.urgency = urgency;
   this.reward = reward;
 }
+
+module.exports = Task;
