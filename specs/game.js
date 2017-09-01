@@ -21,5 +21,10 @@ describe("Heroes and Rats game", function(){
     assert.equal(save_world.completion, true);
   })
 
+  it("Eat and heal", function(){
+    donatello.eat(pizza);
+    assert.strictEqual(donatello.health, 130);
+  })
+
 
 })
