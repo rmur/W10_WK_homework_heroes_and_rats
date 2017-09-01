@@ -13,7 +13,12 @@ describe("Heroes and Rats game", function(){
   })
 
   it("Hero speaks" , function(){
-    assert.strictEqual(donatello.introduce(), "Hi I am Donatello!")
+    assert.strictEqual(donatello.introduce(), "Hi I am Donatello!");
+  })
+
+  it("Task completion method", function(){
+    save_world.complete();
+    assert.equal(save_world.completion, true);
   })
 
 
