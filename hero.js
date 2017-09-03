@@ -16,6 +16,14 @@ Hero.prototype.eat =function(food){
   return this.health; 
 }
 
+Hero.prototype.checkTaskStatus = function(taskToCheck){
+  for (task of this.tasks){
+    if (task == taskToCheck){
+      return task.completion;
+    }
+  }
+}
+
 Hero.prototype.sortTasksByLevel = function(){
   return this.tasks.sort( function(a, b){
     return a.level - b.level;
@@ -33,5 +41,29 @@ Hero.prototype.sortTasksByReward = function(){
     return b.reward - a.reward;
   })
 }
+
+Hero.prototype.completeTask = function(taskComplete){
+  for(task of this.tasks){
+    if (task = taskComplete){
+      task.completion = true;
+    }
+  }
+}
+
+Hero.prototype.listCompletedTasks = function(value){
+  completedTasks = [];
+  unaccomplishedTasks = [];
+  for(task of this.tasks){
+    if (task.completion == true ){
+      completedTasks.push(task);
+    } else {unaccomplishedTasks.push(task)}
+  }
+  if (value == "completed"){
+  return completedTasks;
+  } else { 
+    return unaccomplishedTasks ;
+  }  
+}
+
 
 module.exports = Hero;
