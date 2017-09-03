@@ -9,6 +9,7 @@ describe("Heroes and Rats game", function(){
     donatello = new Hero("Donatello");
     save_world = new Task(1, 10, 50);
     pizza = new Food("Pizza", 30);
+    cheese = new Food("Cheese", 15);
 
   })
 
@@ -22,8 +23,13 @@ describe("Heroes and Rats game", function(){
   })
 
   it("Eat and heal", function(){
+    donatello.eat(cheese);
+    assert.strictEqual(donatello.health, 115);
+  })
+
+  it("Favourite food gives 1,5 to health", function(){
     donatello.eat(pizza);
-    assert.strictEqual(donatello.health, 130);
+    assert.strictEqual(donatello.health,145);
   })
 
 
